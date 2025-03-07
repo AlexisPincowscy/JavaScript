@@ -17,5 +17,30 @@ while (numero < totalPostagens){
     console.log("Imagem do post " + numero )
     console.log(postagens[numero]) // para postar a postagem andadno de posição em posição
     console.log("----") // quebra de linha
-    numero += 1
+    numero += 1 // ou numero++
+}
+
+// Do...While é igual, mas ele faz uma ida antes de conferir a condição
+let contador = 0
+do{
+    console.log("Contador = " + contador)
+    contador ++
+}while(contador <= 5)
+
+// pouco utilizado
+
+// FOR maneira mais usual de fazer os comparativos
+// for (contaodr , até quando, incremento)
+for (let numero = 1; numero <= 5; numero++){
+    console.log("Teste " + numero)
+}
+
+for (index in postagens){
+    console.log(postagens[index])
+    console.log("----\n")
+}
+
+let total = postagens.length
+for (let cont = 0; cont < total; cont++){
+    console.log(postagens[cont])
 }
