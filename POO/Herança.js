@@ -37,7 +37,6 @@ class Cao extends Animal {//subclasse - criada a partir de outra classe (animal 
 class Passaro extends  Animal{
     constructor(cor,tamanho,peso){
         super(cor,tamanho,peso)
-        // super.bico = bico //aqui usando o super para acessar um atributo
     }
     voar(){
         return 'voar'
@@ -47,7 +46,7 @@ class Passaro extends  Animal{
 class Papagaio extends Passaro{//herda tudo de animal e do pássaro
     constructor(cor,tamanho,peso,falar){
         super(cor,tamanho,peso)
-        this.sabeFalar = falar
+        this.sabeFalar = falar// saberFalar = falar //aqui tendo um atributo dó de papagaio
     }
     
     falar(){
