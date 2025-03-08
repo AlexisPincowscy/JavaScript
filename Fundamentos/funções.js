@@ -42,3 +42,15 @@ sub(8,4)
 // tiramos os parênteses, mas só cabe uma linha de comando
 let multi = (a,b) => console.log(a*b)
 multi(2,5)
+
+// podemos encurtar se tivermos apenas um parâmetro (tira o parênteses)
+let exibir = n => console.log(n)
+exibir("Alexis")
+
+// receber direto a função, a variável recebe os parâmetros e seta para o comando
+const somatorio = (a,b) => a+b
+console.log(somatorio(10,45))
+// outra versão
+const divisao = (a,b) => a/b
+let resultado = divisao(20,2)
+console.log(resultado)
