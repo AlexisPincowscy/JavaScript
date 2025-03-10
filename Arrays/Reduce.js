@@ -47,3 +47,16 @@ if (arrayPromo.reduce(funcaoPromo)){//pegamos o valor retornado e verificamos se
 } else {
     console.log('Não tem promoção no site')
 }
+
+// Exemplo 3 - pegar itens de um BD/API e inserir no html
+const lista = [
+    'Alexis', 'Ana', 'Jamilton'
+]
+// aqui passando a função pelo arrow function, já como parâmetro e depois o parâmetro incial do acumular, vazio aqui
+let listaHTML = lista.reduce((acumulador,atual) => {return acumulador += `<li>${atual}</li>\n`}, "")
+console.log(listaHTML)
+//  ou virando função
+
+const funcao = (acumulador, atual) => acumulador += `<li>${atual}</li>\n`
+let exeHTML = lista.reduce(funcao,"")
+console.log(exeHTML)
