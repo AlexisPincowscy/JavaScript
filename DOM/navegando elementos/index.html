@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegando elementos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="pai">
+        <div>Irmão anterior</div>
+        <div id="itens">
+            <p>Elemento 1</p>
+            <p>Elemento 2</p>
+            <p>Elemento 3</p>
+            <p>Elemento 4</p>
+        </div>
+        <div>Próximo irmão</div>
+    </div>
+
+
+<script>
+    const lista = document.querySelector('div#itens')
+    // lembrar que ele considera as quebras de linha como espaços de texto
+    console.log(lista.parentNode)//mostra quem é o elemento 'pai', nesse caso a div 'pai'
+    console.log(lista.childNodes)//mostra os filhos do elemento, nesse caso os 'p'
+    console.log(lista.childNodes[1])//podemos identar assim
+    console.log(lista.firstChild)//mostra o primeiro filho
+    console.log(lista.lastChild)//mostra o último filho
+    console.log(lista.nextSibling)//mostra o próximo elemtno irmão - a div de baixo
+    console.log(lista.previousSibling)//mostra o elemtno irmão anterior - a div de cima
+
+    //////////////////////////////////////////
+    // agora os atributos que não contam as quebras de linha como elemento
+    console.log(lista.children)//os filhos
+    console.log(lista.firstElementChild)
+    console.log(lista.lastElementChild)
+    console.log(lista.nextElementSibling)//próximo elemento
+    console.log(lista.previousElementSibling)//anterior
+</script>
+</body>
+</html>
