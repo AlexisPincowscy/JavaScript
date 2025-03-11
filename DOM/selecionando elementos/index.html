@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="destaque">Área de conteúdo</div>
+    <h1 class="vermelho">Título do site</h1>
+    <p>Subtítulo</p>
+
+    <ul>
+        <li class="primeiro">Item 1</li>
+        <li>Item 2</li>
+        <li class="primeiro">Item 3</li>
+    </ul>
+
+    <input type="text" name="nome">
+
+    <button onclick="teste()">Clique aqui</button>
+    <script>
+        const objDiv = document.getElementById('destaque')//aqui vc linka pelo id
+        const objUl = document.querySelector('li.primeiro')//aqui no querySelector vc linka pelo seletor css
+        console.log(objDiv.textContent)//método para pegar só o texto 
+        console.log(objUl.textContent)
+        function teste (){
+           const butn = document.querySelector('li.primeiro')
+           butn.innerHTML = 'Teste'
+           butn.classList.add('destaque')//classList.add adiciona a classe ao elemento
+        }
+        ///////////////////////////////////////////////////////////////////////
+        const colecao = document.getElementsByTagName('li')//pega a coleção de elementos com essa tag
+        console.log(colecao) //aparece o HTMLCollection que tem alguns métodos
+        // para poder pegar cada um dos itens aqui, tmos algumas oções
+        for (i=0; i<colecao.length; i++){//fazendo um for usando o .length
+            console.log(colecao[i].textContent)//aqui para imprimir só o texto do item
+        }
+
+        let array = Array.from(colecao)//transformar a coleção em lista
+        const funcao = function(item,i){//fucção do forEach
+            console.log(item.textContent)
+        }
+        array.forEach(funcao)//fazer um forEach
+        /////////////////////////////////////////////////////
+        const objClass = document.getElementsByClassName('vermelho')//pegar os objetos pela classe
+        //vai funcionar exatemte como o de cima, vira uma coleção epoemos usar as funções
+        const objNome = document.getElementsByName('nome')//pega elementos pelo name (comum em formulários)
+        // não precisa de conversão para o forEach(), ele não é array, mas funciona pq é NodeCollection
+        const objtSlectorAll = document.querySelectorAll('li.primeiro')//pega todos os elementos com o seletor
+        console.log(objtSlectorAll)//aqui era o item1 e o item3, vira coleção Node, aceita o forEach() direto
+
+    </script>
+</body>
+</html>
