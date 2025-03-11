@@ -51,7 +51,7 @@
         // não precisa de conversão para o forEach(), ele não é array, mas funciona pq é NodeCollection
         const objtSlectorAll = document.querySelectorAll('li.primeiro')//pega todos os elementos com o seletor
         console.log(objtSlectorAll)//aqui era o item1 e o item3, vira coleção Node, aceita o forEach() direto
-
+        console.log(objtSlectorAll.item(1).textContent)//outra maneira de selecionar o item diretamente
     </script>
 </body>
 </html>
