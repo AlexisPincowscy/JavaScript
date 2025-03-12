@@ -40,11 +40,9 @@
 
     function adicionar(){
         // no appendChild o elemento é inserido ao final
-        // li2.appendChild(text)
-        // ul.appendChild(li2)
         li2.appendChild(text)
-        ul.insertBefore(li2, ul.children[0])
-
+        ul.appendChild(li2)
+    
         // vamos clonar o <p> para dentro da li
         const clone = document.getElementById('clone')
         const itemClone = clone.cloneNode(true)//pega o elmento e os filhos todos, se for false, pega só o elemento
