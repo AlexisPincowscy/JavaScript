@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando atributos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <img id='img' src="celular.png" alt="celular" width="500">
+    <a id='link' href="https://www.google.com.br/" target="_blank">Clique aqui</a>
+    <button onclick="alterarFoto()">Alterar a foto</button>
+<script>
+//    const img = document.getElementById('img')
+//    console.log(img.src)
+//    img.src = "grafico.png"
+   //let atributo = 'src'
+   //img.getAttribute(atributo)//ou o prórpior atributo (digitar direto 'src' ou 'width')
+   function alterarFoto(){
+    // no click do botão altermos a imagem e o direcionamento do link
+        const img = document.getElementById('img')
+        img.src = "grafico.png"
+
+        const link = document.querySelector('#link')
+        link.href = "https://www.xbox.com/en-US/"
+    }
+
+</script>
+</body>
+</html>
