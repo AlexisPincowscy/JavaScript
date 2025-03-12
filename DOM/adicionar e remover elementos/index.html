@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar/Remover Elementos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="conteudo">Conteúdo</div>
+
+    <ul id="itens">
+        <li>Pedro</li>
+        <li>Ana</li>
+    </ul>
+
+    <p id="clone" >Parágrafo a ser clonado </p>
+
+    <button onclick="adicionar()">Adicionar li</button>
+    <button onclick="remover()">Remover li</button>
+<script>
+
+    const objDiv = document.getElementById('conteudo')
+    objDiv.textContent = "Alexis"//apenas altera o texto
+    objDiv.innerHTML = '<p style="color: red">Alexis Pincowscy</p>'//adiciona elementos se precisar
+
+    const ul = document.getElementById('itens')
+    const li = document.createElement('li')//cria um elemento, pode ser qualquer um
+    li.textContent = "Alexis"
+    li.setAttribute('teste', 10)//criando um atributo
+    ul.appendChild(li)//o pai, recebe o appendChild (acrescenta o elemento, aqui um li)
+    // outra maneira de criar um elemento é
+    const li2 = document.createElement('li')
+    const text = document.createTextNode('Lígia')//variação do textContent
+    // li2.appendChild(text)
+    // ul.appendChild(li2)
+    // 
+
+
+    function adicionar(){
+        // no appendChild o elemento é inserido ao final
+        // li2.appendChild(text)
+        // ul.appendChild(li2)
+        li2.appendChild(text)
+        ul.insertBefore(li2, ul.children[0])
+
+        // vamos clonar o <p> para dentro da li
+        const clone = document.getElementById('clone')
+        const itemClone = clone.cloneNode(true)//pega o elmento e os filhos todos, se for false, pega só o elemento
+        ul.appendChild(itemClone) //adicionoar o item na ul
+        ul.insertBefore(clone, ul.children[0])// vai inserir o <p> antes do ul
+    }
+    
+    function remover(){
+        ul.removeChild(li2)
+    }
+</script>
+</body>
+</html>
