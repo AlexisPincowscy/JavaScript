@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos personalizados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- quantidade não é um atributo padrão, mas podemos criar um para usar com JS-->
+    <span id="itens" quantidade="2" data-padronizado = 'teste'>
+        2 itens no carrinho
+    </span>
+
+    <!-- exemplo de situação para usar atributos personalizados -->
+    <ul id="lista">
+        <li codigo="001">Alexis</li>
+        <li codigo="002">Lígia</li>
+    </ul>
+
+    <label id="labelNome"  for="nome">Nome</label>
+    <input type="text" id="nome" name="nome">
+<script>
+    const objt = document.getElementById('itens')
+    // objt.quantidade só funciona para atributos padrões (ex.id)
+    console.log(objt.getAttribute('quantidade'))//aqui conseguimos pegar qualquer atributo
+    objt.setAttribute('quantidade',10)//aqui setamos o valor parâmetro (qual atributo, valor novo)
+    console.log(objt.getAttribute('quantidade'))
+
+    // usando o data- no atribuot ele pega o recusro dataset.
+    // poderíamo criar vários data- alguma coisa, para termos atributos personalizados
+    console.log(objt.dataset.padronizado)
+
+    // para saber se o atributo existe ou não
+    console.log(objt.hasAttribute('quantidade'))//retorn true or false
+
+    // para removar atributo 
+    objt.removeAttribute('data-padronizado')
+    console.log(objt.hasAttribute('data-padronizado'))//vai retornar false, foi deletado
+
+    // para mostrar todos
+    console.log(objt.attributes)//funciona como array tbm, podendo usar os índices ex:[0]
+    // se selcionar o atributo, por npome ou índice, ele não retorna o valor e sim o atributo todo
+    console.log(objt.attributes['quantidade'])
+
+    // existem alguns attributos que são palavras de outros comandos, como o for do label
+    const objLabel = document.getElementById('labelNome')
+    // existem duas maneiras para pegar o atributo
+    console.log(objLabel.getAttribute('for'))//ou
+    console.log(objLabel.htmlFor)//esse html vem para destacar que é um comando vinculado ao html e não um for de condição
+
+
+
+</script>
+</body>
+</html>
