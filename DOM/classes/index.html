@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionanado Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <span class="vermelho">Alexis Pincowscy</span>
+    <button onclick="executar()">Clique aqui</button>
+
+<script>
+
+    function executar(){
+        const objSpan = document.querySelector('span')
+        const classes = objSpan.classList//vai receber a lista de classes
+        console.log(classes)//o DOM list das classes 0 e 1
+        console.log(classes.length)//retorna 2, número de classes
+        console.log(classes.contains('vermelho'))//contaisn confere se o objeto contem ou não aquela classe
+        classes.add('teste')//adiciona a classe teste
+        console.log(classes)
+        classes.remove('teste')//remove a classe
+        classes.toggle('vermelho')//ficas alternando, tirando e colocando a classe, nese claso, a cda click
+        objSpan.className = 'vermelho texto teste'//aqui ele substitui as classes pelas escritas
+
+        classes.forEach(item=>console.log(item))
+    }
+
+</script>
+</body>
+</html>

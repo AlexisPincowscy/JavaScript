@@ -1,0 +1,21 @@
+body{
+    font-size: 40px ;
+}
+
+div#itens{
+    background-color: orange;
+}
+
+.vermelho{
+    background-color: red;
+    color: white;
+}
+
+.laranja
+{
+    background-color: orange;
+}
+
+.texto {
+    color: blue;
+}
