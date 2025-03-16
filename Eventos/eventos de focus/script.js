@@ -1,9 +1,13 @@
+
 function executar(){
     console.log('Executou!')
-    
+    foco.focus()//trava o objeto, da foco ali
 }
 
-const entrada = document.getElementById('entrada')
-// entrada.addEventListener('keydown',executar) executa no click do botão do teclado VALE PARA QUALQUER TECLA
-// entrada.addEventListener('keyup',executar) executa quando tiro o dedo do teclado
-// entrada.addEventListener('keypress',executar) igual o keydown, mas não executa com teclas funcionais (alt, ctrl, etc), só lê teclas com caracteres
+
+// método útil para validações de formulário
+
+const foco = document.getElementById('foco')//serve para travar o foco no elemento
+const blur = document.getElementById('blur')
+
+foco.addEventListener('blur',executar)//quando ele tenta sair, desficar, ele volta pro foco
