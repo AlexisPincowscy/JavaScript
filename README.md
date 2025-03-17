@@ -1,5 +1,4 @@
 # Introdução ao JavaScript
-
 Olá, seja bem-vind@ a introdução ao JavaScript.
 
 Nesse Repositório você encontrará uma série de conceitos dos básicos até os avançados no JavaScript.
